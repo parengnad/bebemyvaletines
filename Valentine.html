@@ -1,0 +1,78 @@
+<html>
+<body>
+<div>
+	<h1 class="blinking"><br><br><br>Will you be my Valentine???</h1>
+	<div class="mid" align = "center">
+	<button onclick="showYes()">YES</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button id="movingbutton" >NO</button>
+	</div>
+</div>
+<style>
+	div{
+		text-align:center;
+		vertical-align:middle;
+	}
+	#movingbutton{
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+    }
+	h1{
+		font-family: Brush Script MT;
+		font-style: normal;
+		font-size:100px;
+		color: white;
+		text-align:center;
+		
+	}
+	
+	button{
+		font-family: Bodoni MT;
+		font-style: normal;
+		background-color: #ffd480; 
+		border: solid;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		font-size: 30px;
+		cursor: pointer;
+		
+	}
+	button:hover {
+		background-color: #ffb31a;
+	}
+	.blinking{
+		animation:blinkingText 1.2s infinite;
+	}
+	@keyframes blinkingText{
+    0%{     color: #ff6600;    }
+    49%{    color: #ffff00; }
+    60%{    color: #ff4dc4; }
+    99%{    color: #3333ff;  }
+    100%{   color: #4dff4d;    }
+	}
+</style>
+
+<script>
+ var b = document.querySelector("#movingbutton");
+	 b.addEventListener("click",change);
+
+ function change(){
+	let i =Math.abs(Math.floor(Math.random()*window.innerWidth-55))
+	let j = Math.abs(Math.floor(Math.random()*window.innerHeight-21));
+	console.log('here' , i ,j , b.style.left , b.style.top);
+    b.style.left = i+'px';
+    b.style.top = j + "px";
+	}
+
+ function showYes() {
+    var Yes = "I LOVE YOU!!! Happy Valentines Day <3";
+    alert (Yes);
+	}
+  
+</script>
+
+</body>
+
+
+</html>
